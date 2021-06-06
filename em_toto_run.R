@@ -21,9 +21,9 @@ colnames(zwischenstand_dw) <- c("Spieler","Kampfname","Punkte","Weltmeister-Tipp
 ###Eintrag für jeden Spieler
 for (p in 2:nrow(tipps)) {
 
-###Punkte evaluieren für jedes Spiel
 score <- 0
 
+###Punkte evaluieren für jedes Spiel
 for (g in 5:40) {
 
 if ( is.na(tipps[1,g]) == FALSE ) {
@@ -55,7 +55,31 @@ score <- score + 1
 }
 
     
+}
+
+###Bonuspunkte Europameister
+if ( is.na(tipps[1,41]) == FALSE ) {
+
+if (tipps[1,41] == tipps[p,41]) { 
+   
+score <- score + 5
+
+}
+     
 }  
+
+###Bonuspunkte Wie weit kommt die Schweiz
+if ( is.na(tipps[1,42]) == FALSE ) {
+  
+  if (tipps[1,42] == tipps[p,42]) { 
+    
+    score <- score + 5
+    
+  }
+  
+}  
+
+
   
 #Data entry
 player_data <- data.frame(tipps[p,3],tipps[p,4],score,tipps[p,41],tipps[p,42])
