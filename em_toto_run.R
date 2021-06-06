@@ -94,7 +94,7 @@ zwischenstand_dw <- rbind(zwischenstand_dw,player_data)
 zwischenstand_dw <- zwischenstand_dw[-1,]
 zwischenstand_dw <- zwischenstand_dw[order(-zwischenstand_dw$Punkte),]
 write.csv(zwischenstand_dw,"Output/zwischenstand_dw.csv", na = "", row.names = FALSE, fileEncoding = "UTF-8")
-
+print(zwischenstand_dw)
 
 #Make Commit
 git2r::config(user.name = "awp-finanznachrichten",user.email = "sw@awp.ch")
