@@ -105,3 +105,5 @@ gitcommit()
 gitpush()
 
 #Datawrapper-Grafik veröffentlichen
+#dw_edit_chart("9OQxW",intro=paste0("Letztes Update: ",format(Sys.time(),"%d.%m.%Y %H:%M Uhr")))
+#dw_publish_chart("9OQxW")
