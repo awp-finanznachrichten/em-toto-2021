@@ -92,7 +92,7 @@ zwischenstand_dw <- rbind(zwischenstand_dw,player_data)
 
 #Daten bearbeiten und speichern
 zwischenstand_dw <- zwischenstand_dw[-1,]
-zwischenstand_dw <- zwischenstand_dw[order(-zwischenstand_dw$Punkte),]
+zwischenstand_dw <- zwischenstand_dw[order(-zwischenstand_dw$Punkte,zwischenstand_dw$Spieler),]
 write.csv(zwischenstand_dw,"Output/zwischenstand_dw.csv", na = "", row.names = FALSE, fileEncoding = "UTF-8")
 print(zwischenstand_dw)
 
@@ -105,5 +105,5 @@ gitcommit()
 gitpush()
 
 #Datawrapper-Grafik veröffentlichen
-dw_edit_chart("9OQxW",intro=paste0("Letztes Update: ",format(Sys.time(),"%d.%m.%Y %H:%M Uhr")))
-dw_publish_chart("9OQxW")
+#dw_edit_chart("9OQxW",intro=paste0("Letztes Update: ",format(Sys.time(),"%d.%m.%Y %H:%M Uhr")))
+#dw_publish_chart("9OQxW")
