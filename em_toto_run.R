@@ -16,7 +16,7 @@ tipps <- read_excel("Tipps/EM-Toto 2021 (Antworten).xlsx")
 
 #Neues Dataframe erstellen
 zwischenstand_dw <- data.frame("Spieler","Kampfname",99,"Europameister-Tipp","Wie weit kommt die Schweiz?")
-colnames(zwischenstand_dw) <- c("Spieler","Kampfname","Punkte","Weltmeister-Tipp","Wie weit kommt die Schweiz?")
+colnames(zwischenstand_dw) <- c("Spieler","Kampfname","Punkte","Europameister-Tipp","Wie weit kommt die Schweiz?")
 
 ###Eintrag für jeden Spieler
 for (p in 2:nrow(tipps)) {
@@ -83,7 +83,7 @@ if ( is.na(tipps[1,42]) == FALSE ) {
   
 #Data entry
 player_data <- data.frame(tipps[p,3],tipps[p,4],score,tipps[p,41],tipps[p,42])
-colnames(player_data) <- c("Spieler","Kampfname","Punkte","Weltmeister-Tipp","Wie weit kommt die Schweiz?")
+colnames(player_data) <- c("Spieler","Kampfname","Punkte","Europameister-Tipp","Wie weit kommt die Schweiz?")
 
 zwischenstand_dw <- rbind(zwischenstand_dw,player_data)
 
@@ -105,5 +105,6 @@ gitcommit()
 gitpush()
 
 #Datawrapper-Grafik veröffentlichen
-#dw_edit_chart("9OQxW",intro=paste0("Letztes Update: ",format(Sys.time(),"%d.%m.%Y %H:%M Uhr")))
-#dw_publish_chart("9OQxW")
+datawrapper_auth("fYNHJEgLlCPgMC8hO0Bxm7j3SG2cOGCPnIJRc5RCVc72zYBFaMxGYIOY081zYaeq", overwrite = TRUE)
+dw_edit_chart("9OQxW",intro=paste0("Letztes Update: ",format(Sys.time(),"%d.%m.%Y %H:%M Uhr")))
+dw_publish_chart("9OQxW")
