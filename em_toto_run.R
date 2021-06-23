@@ -18,7 +18,7 @@ tipps <- read_excel("Tipps/EM-Toto 2021 (Antworten)_neu.xlsx")
 zwischenstand_dw <- data.frame("Spieler","Kampfname",99,"Europameister-Tipp","Wie weit kommt die Schweiz?")
 colnames(zwischenstand_dw) <- c("Spieler","Kampfname","Punkte","Europameister-Tipp","Wie weit kommt die Schweiz?")
 
-View(tipps)
+
 ###Eintrag für jeden Spieler
 for (p in 2:nrow(tipps)) {
 
