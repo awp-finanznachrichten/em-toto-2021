@@ -18,13 +18,14 @@ tipps <- read_excel("Tipps/EM-Toto 2021 (Antworten)_neu.xlsx")
 zwischenstand_dw <- data.frame("Spieler","Kampfname",99,"Europameister-Tipp","Wie weit kommt die Schweiz?")
 colnames(zwischenstand_dw) <- c("Spieler","Kampfname","Punkte","Europameister-Tipp","Wie weit kommt die Schweiz?")
 
+View(tipps)
 ###Eintrag für jeden Spieler
 for (p in 2:nrow(tipps)) {
 
 score <- 0
 
 ###Punkte evaluieren für jedes Spiel
-for (g in 5:40) {
+for (g in 5:55) {
 
 if ( is.na(tipps[1,g]) == FALSE ) {
 
@@ -58,9 +59,9 @@ score <- score + 1
 }
 
 ###Bonuspunkte Europameister
-if ( is.na(tipps[1,41]) == FALSE ) {
+if ( is.na(tipps[1,56]) == FALSE ) {
 
-if (tipps[1,41] == tipps[p,41]) { 
+if (tipps[1,56] == tipps[p,56]) { 
    
 score <- score + 5
 
@@ -71,7 +72,7 @@ score <- score + 5
 ###Bonuspunkte Wie weit kommt die Schweiz
 if ( is.na(tipps[1,42]) == FALSE ) {
   
-  if (tipps[1,42] == tipps[p,42]) { 
+  if (tipps[1,57] == tipps[p,57]) { 
     
     score <- score + 5
     
@@ -82,7 +83,7 @@ if ( is.na(tipps[1,42]) == FALSE ) {
 
   
 #Data entry
-player_data <- data.frame(tipps[p,3],tipps[p,4],score,tipps[p,41],tipps[p,42])
+player_data <- data.frame(tipps[p,3],tipps[p,4],score,tipps[p,56],tipps[p,57])
 colnames(player_data) <- c("Spieler","Kampfname","Punkte","Europameister-Tipp","Wie weit kommt die Schweiz?")
 
 zwischenstand_dw <- rbind(zwischenstand_dw,player_data)
