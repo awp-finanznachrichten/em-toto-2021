@@ -70,7 +70,7 @@ score <- score + 5
 }  
 
 ###Bonuspunkte Wie weit kommt die Schweiz
-if ( is.na(tipps[1,42]) == FALSE ) {
+if ( is.na(tipps[1,57]) == FALSE ) {
   
   if (tipps[1,57] == tipps[p,57]) { 
     
@@ -109,3 +109,4 @@ gitpush()
 datawrapper_auth("fYNHJEgLlCPgMC8hO0Bxm7j3SG2cOGCPnIJRc5RCVc72zYBFaMxGYIOY081zYaeq", overwrite = TRUE)
 dw_edit_chart("9OQxW",intro=paste0("Letztes Update: ",format(Sys.time(),"%d.%m.%Y %H:%M Uhr")))
 dw_publish_chart("9OQxW")
+
