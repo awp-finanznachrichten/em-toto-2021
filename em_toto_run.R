@@ -12,7 +12,7 @@ setwd("C:/Users/simon/OneDrive/Fussballdaten/em-toto-2021")
 source("functions.R", encoding = "UTF-8")
 
 #Daten laden
-tipps <- read_excel("Tipps/EM-Toto 2021 (Antworten)_neu.xlsx")
+tipps <- read_excel("Tipps/EM-Toto 2021 (Antworten).xlsx")
 
 #Neues Dataframe erstellen
 zwischenstand_dw <- data.frame("Spieler","Kampfname",99,"Europameister-Tipp","Wie weit kommt die Schweiz?")
