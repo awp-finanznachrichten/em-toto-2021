@@ -25,7 +25,7 @@ for (p in 2:nrow(tipps)) {
 score <- 0
 
 ###Punkte evaluieren für jedes Spiel
-for (g in 5:55) {
+for (g in 5:56) {
 
 if ( is.na(tipps[1,g]) == FALSE ) {
 
@@ -59,9 +59,9 @@ score <- score + 1
 }
 
 ###Bonuspunkte Europameister
-if ( is.na(tipps[1,56]) == FALSE ) {
+if ( is.na(tipps[1,57]) == FALSE ) {
 
-if (tipps[1,56] == tipps[p,56]) { 
+if (tipps[1,57] == tipps[p,57]) { 
    
 score <- score + 5
 
@@ -70,9 +70,9 @@ score <- score + 5
 }  
 
 ###Bonuspunkte Wie weit kommt die Schweiz
-if ( is.na(tipps[1,57]) == FALSE ) {
+if ( is.na(tipps[1,58]) == FALSE ) {
   
-  if (tipps[1,57] == tipps[p,57]) { 
+  if (tipps[1,58] == tipps[p,58]) { 
     
     score <- score + 5
     
@@ -83,7 +83,7 @@ if ( is.na(tipps[1,57]) == FALSE ) {
 
   
 #Data entry
-player_data <- data.frame(tipps[p,3],tipps[p,4],score,tipps[p,56],tipps[p,57])
+player_data <- data.frame(tipps[p,3],tipps[p,4],score,tipps[p,57],tipps[p,58])
 colnames(player_data) <- c("Spieler","Kampfname","Punkte","Europameister-Tipp","Wie weit kommt die Schweiz?")
 
 zwischenstand_dw <- rbind(zwischenstand_dw,player_data)
